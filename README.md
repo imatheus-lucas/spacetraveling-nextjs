@@ -25,8 +25,8 @@ Também conhecido como CMS sem cabeça, CMS API, plataforma de conteúdo, experi
 
 - Home
 
-![Untitled](SpaceTraveling%205c9cf20b9d5b40cfaf9537bd8cb6074e/Untitled.png)
+![Untitled](https://github.com/imatheus-lucas/spacetraveling-nextjs/blob/main/images/home.png)
 
 - Post
 
-![Untitled](SpaceTraveling%205c9cf20b9d5b40cfaf9537bd8cb6074e/Untitled%201.png)
+![Untitled](https://github.com/imatheus-lucas/spacetraveling-nextjs/blob/main/images/post.png)
