@@ -1,0 +1,44 @@
+.container {
+  padding: 0 20%;
+
+  .post {
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0.7);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.875rem;
+      color: #f5f5f5;
+    }
+    h5 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.875rem;
+      color: #f5f5f5;
+      opacity: 0.8;
+    }
+    .details {
+      display: flex;
+      > div {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        span {
+          margin-right: 1rem;
+          color: #f5f5f5;
+          opacity: 0.8;
+        }
+        svg {
+          color: #f5f5f5;
+          font-size: 25px;
+          margin-right: 1rem;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
