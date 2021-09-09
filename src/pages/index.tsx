@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 
 import { FiCalendar, FiUser } from 'react-icons/fi';
 import styles from './home.module.scss';
@@ -7,6 +7,8 @@ import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Header from '../components/Header';
 import Link from 'next/link';
+
+import Prismic from '@prismicio/client';
 type DataProps = {
   uid: string;
   title: string;
@@ -22,7 +24,6 @@ type HomeProps = {
 const Home = ({ data }: HomeProps) => {
   return (
     <div className={styles.container}>
-      <Header />
       {data.map((item, index) => {
         return (
           <Link key={index} href={`/post/${item.uid}`}>
@@ -49,8 +50,15 @@ const Home = ({ data }: HomeProps) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  const { results } = await getPrismicClient(ctx.req).query('');
+export const getStaticProps: GetStaticProps = async ctx => {
+  const { results } = await getPrismicClient(ctx.preview).query(
+    Prismic.Predicates.at('document.type', 'pos'),
+    {
+      pageSize: 10,
+      page: 1,
+    }
+  );
+  console.log(results);
 
   const data = results.map(result => {
     return {
